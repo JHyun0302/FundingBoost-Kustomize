@@ -3,15 +3,7 @@ resources:
   - nginx.yaml
   - mariadb.yaml
   - backend.yaml
-  # - frontend.yaml
+  - frontend.yaml
   - redis1.yaml
   - redis2.yaml
   - backend-monitoring.yaml
-
-configMapGenerator:
-  - name: redis1-configmap
-    files:
-      - configs/redis1.conf
-  - name: redis2-configmap
-    files:
-      - configs/redis2.conf

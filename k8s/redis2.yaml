@@ -13,16 +13,9 @@ spec:
     spec:
       containers:
         - name: redis2
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_9493aa4f0021
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_928bcbf04e97
           ports:
             - containerPort: 6380
-          volumeMounts:
-            - name: config-volume
-              mountPath: /usr/local/etc/redis
-      volumes:
-        - name: config-volume
-          configMap:
-            name: redis2-configmap
 ---
 apiVersion: v1
 kind: Service
