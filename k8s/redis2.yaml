@@ -18,7 +18,8 @@ spec:
             - containerPort: 6380
           volumeMounts:
             - name: config-volume
-              mountPath: /usr/local/etc/redis
+              mountPath: /usr/local/etc/redis/redis2.conf
+			  subPath: redis2.conf
       volumes:
         - name: config-volume
           configMap:
