@@ -6,4 +6,4 @@ resources:
   - frontend.yaml
   - redis1.yaml
   - redis2.yaml
-  - backend-monitoring.yam
+  - backend-monitoring.yaml
