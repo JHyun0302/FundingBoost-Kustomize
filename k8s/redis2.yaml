@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis2
+spec:
+  selector:
+    matchLabels:
+      app: redis2
+  template:
+    metadata:
+      labels:
+        app: redis2
+    spec:
+      containers:
+        - name: redis2
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_9493aa4f0021
+          ports:
+            - containerPort: 6380
+          volumeMounts:
+            - name: config-volume
+              mountPath: /usr/local/etc/redis
+      volumes:
+        - name: config-volume
+          configMap:
+            name: redis2-configmap
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis2
+spec:
+  selector:
+    app: redis2
+  ports:
+    - port: 6380
+      targetPort: 6380

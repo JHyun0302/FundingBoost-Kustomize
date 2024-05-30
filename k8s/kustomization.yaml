@@ -1,12 +1,17 @@
 namespace: default
 resources:
   - nginx.yaml
-  - mysql.yaml
+  - mariadb.yaml
   - backend.yaml
+  - frontend.yaml
+  - redis1.yaml
+  - redis2.yaml
+  - backend-monitoring.yaml
+
 configMapGenerator:
-  - name: nginx
+  - name: redis1-configmap
     files:
-      - configs/default.conf
-  - name: init-db
+      - configs/redis1.conf
+  - name: redis2-configmap
     files:
-      - configs/init.sql
+      - configs/redis2.conf

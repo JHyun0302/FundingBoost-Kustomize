@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-monitoring
+  labels:
+    app: backend-monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend-monitoring
+  template:
+    metadata:
+      labels:
+        app: backend-monitoring
+    spec:
+      containers:
+        - name: prometheus
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_d9e934326e0a
+          ports:
+            - containerPort: 9090
+          readinessProbe:
+            httpGet:
+              path: /metrics
+              port: 9090
+        - name: grafana
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_c1b65f8c8757
+          ports:
+            - containerPort: 3001
+          readinessProbe:
+            httpGet:
+              path: /dashboards
+              port: 3001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-monitoring
+spec:
+  ports:
+    - port: 3001
+      targetPort: 3001
+  selector:
+    app: backend-monitoring
