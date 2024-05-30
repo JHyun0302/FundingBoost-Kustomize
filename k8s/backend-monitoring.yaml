@@ -24,7 +24,7 @@ spec:
               path: /metrics
               port: 9090
         - name: grafana
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_c1b65f8c8757
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_1dc533754b2f
           ports:
             - containerPort: 3001
           readinessProbe:
