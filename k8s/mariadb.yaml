@@ -54,8 +54,6 @@ kind: Service
 metadata:
   name: mariadb
 spec:
-  type: ClusterIP
-  clusterIP: None # Headless
   selector:
     app: mariadb
   ports:
