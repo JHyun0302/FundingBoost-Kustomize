@@ -20,8 +20,10 @@ spec:
           imagePullPolicy: Always
           env:
             - name: TZ
-              value: Asia/Seoul		  
-            - name: MARIADB_ROOT_PASSWORD
+              value: Asia/Seoul
+            - name: MARIADB_USERNAME
+              value: root			
+            - name: MARIADB_PASSWORD
               value: root
             - name: MARIADB_DATABASE
               value: fundingboost
