@@ -20,7 +20,7 @@ spec:
             - name: TZ
               value: Asia/Seoul
             - name: DATABASE_URL
-              value: jdbc:mysql://mysql/fundingboost
+              value: jdbc:mariadb://mariadb/fundingboost?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
           resources:
             requests:
               memory: 1Gi
