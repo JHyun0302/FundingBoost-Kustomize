@@ -15,12 +15,12 @@ spec:
       containers:
         - name: backend
           # 여러분의 backend image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_fb00c63ae5e7
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_3fa126d454f7
           env:
             - name: TZ
               value: Asia/Seoul
             - name: DATABASE_URL
-              value: jdbc:mysql://mysql/fundingboost
+              value: jdbc:mariadb://mariadb:3306/fundingboost?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
           resources:
             requests:
               memory: 1Gi

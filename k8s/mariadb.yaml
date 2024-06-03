@@ -5,7 +5,6 @@ metadata:
   name: mariadb
 spec:
   serviceName: mariadb
-  replicas: 2
   selector:
     matchLabels:
       app: mariadb
@@ -22,7 +21,9 @@ spec:
           env:
             - name: TZ
               value: Asia/Seoul
-            - name: MARIADB_ROOT_PASSWORD
+            - name: MARIADB_USERNAME
+              value: root
+            - name: MARIADB_PASSWORD
               value: root
             - name: MARIADB_DATABASE
               value: fundingboost
