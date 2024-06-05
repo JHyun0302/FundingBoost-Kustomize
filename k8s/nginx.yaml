@@ -20,8 +20,8 @@ spec:
             backend:
               serviceName: backend-monitoring
               servicePort: 3001
-          - path: /
-            pathType: Prefix
-            backend:
-              serviceName: frontend
-              servicePort: 3000
+          # - path: /
+          #   pathType: Prefix
+          #   backend:
+          #     serviceName: frontend
+          #     servicePort: 3000

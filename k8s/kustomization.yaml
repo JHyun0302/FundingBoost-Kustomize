@@ -3,7 +3,8 @@ resources:
   - nginx.yaml
   - mariadb.yaml
   - backend.yaml
-  - frontend.yaml
+  # - frontend.yaml
   - redis1.yaml
   - redis2.yaml
   - backend-monitoring.yaml
+  - elasticSearch.yaml
