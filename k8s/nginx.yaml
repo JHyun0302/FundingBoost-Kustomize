@@ -30,8 +30,8 @@ spec:
             backend:
               serviceName: elasticsearch
               servicePort: 9200
-          # - path: /
-          #   pathType: Prefix
-          #   backend:
-          #     serviceName: frontend
-          #     servicePort: 3000
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: frontend
+              servicePort: 3000
