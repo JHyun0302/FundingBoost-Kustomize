@@ -20,7 +20,12 @@ spec:
             backend:
               serviceName: backend-monitoring
               servicePort: 3001
-          - path: /_bulk, /item
+          - path: /_bulk
+            pathType: Prefix
+            backend:
+              serviceName: elasticsearch
+              servicePort: 9200
+          - path: /item
             pathType: Prefix
             backend:
               serviceName: elasticsearch
