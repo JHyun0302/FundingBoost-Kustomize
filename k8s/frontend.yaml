@@ -18,6 +18,9 @@ spec:
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_92892be624af
           ports:
             - containerPort: 3000
+          env:
+            - name: REACT_APP_FUNDINGBOOST
+              value: https://k14f4ad097352a.user-app.krampoline.com/api/v1
           readinessProbe:
             httpGet:
               path: /
