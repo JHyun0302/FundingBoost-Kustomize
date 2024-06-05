@@ -10,7 +10,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /api/v1
+          - path: /api
             pathType: Prefix
             backend:
               serviceName: backend
@@ -20,6 +20,11 @@ spec:
             backend:
               serviceName: backend-monitoring
               servicePort: 3001
+          - path: /_bulk
+            pathType: Prefix
+            backend:
+              serviceName: elasticsearch
+              servicePort: 9200
           # - path: /
           #   pathType: Prefix
           #   backend:
