@@ -15,6 +15,11 @@ spec:
             backend:
               serviceName: backend
               servicePort: 8080
+          - path: /login/oauth2
+            pathType: Prefix
+            backend:
+              serviceName: backend
+              servicePort: 8080
           - path: /dashboards
             pathType: Prefix
             backend:
