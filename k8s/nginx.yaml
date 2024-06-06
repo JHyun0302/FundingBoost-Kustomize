@@ -35,8 +35,3 @@ spec:
             backend:
               serviceName: frontend
               servicePort: 3000
-          - path: /login/oauth2
-            pathType: Prefix
-            backend:
-              serviceName: frontend
-              servicePort: 3000
