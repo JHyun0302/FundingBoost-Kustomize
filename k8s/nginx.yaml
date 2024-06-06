@@ -15,11 +15,6 @@ spec:
             backend:
               serviceName: backend
               servicePort: 8080
-          - path: /login/oauth2
-            pathType: Prefix
-            backend:
-              serviceName: backend
-              servicePort: 8080
           - path: /dashboards
             pathType: Prefix
             backend:
@@ -36,6 +31,11 @@ spec:
               serviceName: elasticsearch
               servicePort: 9200
           - path: /
+            pathType: Prefix
+            backend:
+              serviceName: frontend
+              servicePort: 3000
+          - path: /login/oauth2
             pathType: Prefix
             backend:
               serviceName: frontend
